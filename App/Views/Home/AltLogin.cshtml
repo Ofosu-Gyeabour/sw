@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Desktop";
+    Layout = "~/Views/Shared/_AlternateLogin.cshtml";
+}
+    
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<form id="login_form" class="form_class" method="post">
+    <div class="form_div">
+        <label>Login:</label>
+        <input class="field_class" name="login_txt" id="usr" type="text" placeholder="Enter username" autofocus>
+        <label>Password:</label>
+        <input id="pass" class="field_class" name="password_txt" type="password" placeholder="Enter password">
+        
+        <button class="submit_class" id="submitBtn" type="submit">
+            Login
+        </button>
+    </div>
+    <div class="info_div">
+        
+    </div>
+</form>
+
+   <script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('#submitBtn').click(function(e){
+            e.preventDefault();
+            
+            $.post("@Url.Action("Login","User")",
+                    { usrname: $('#usr').val(), pwd: $('#pass').val() })
+                    .done(function (msg) {
+                        if (msg.status.toString() == "true") {
+                            $('div.info_div').empty().append('<b style="font-size:15px;color:green;">Login success. Redirecting...</b>').fadeIn('slow').fadeOut('slow');
+                            //window.location = "Home/Main";
+                            window.location = "@Url.Action("UI","Home")";
+                        }
+                        else if (msg.status.toString() == "false")
+                        {
+                            if (msg.reason.toString() == "pwd") {
+                                $('div.info_div').empty().append('<b style="font-size:15px;color:red;">Incorrect login credentials.Please try again</b>').fadeIn('slow').fadeOut('slow');
+                            }
+
+                            if (msg.reason.toString() == "inactive") {
+                                $('div.info_div').empty().append('<b style="font-size:12px;color:red;">User account is de-activated. Please contact ITD</b>').fadeIn('slow').fadeOut('slow');
+                            }
+
+                            if (msg.reason.toString() == "multiple_Logs") {
+                                $('div.info_div').empty().append('<b style="font-size:12px;color:red;">User has already logged on from a different location</b>').fadeIn('slow').fadeOut('slow');
+                            }
+                        }
+                        
+                })
+
+        });
+    });
+
+</script>
