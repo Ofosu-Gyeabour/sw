@@ -8,4 +8,7 @@ namespace App.APIs.Response
         public string message { get; set; } = string.Empty;
         public object data { get; set; }
     }
+
+    
+
 }

@@ -189,6 +189,10 @@
       "PackagePath": "staticwebassets\\css\\Content\\structure.css"
     },
     {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\css\\Content\\wavy.css",
+      "PackagePath": "staticwebassets\\css\\Content\\wavy.css"
+    },
+    {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -197,16 +201,8 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\PASL.jpg",
-      "PackagePath": "staticwebassets\\images\\PASL.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\PASL_Logo.jpg",
-      "PackagePath": "staticwebassets\\images\\PASL_Logo.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\URS.jpg",
-      "PackagePath": "staticwebassets\\images\\URS.jpg"
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\WIF_logo.png",
+      "PackagePath": "staticwebassets\\images\\WIF_logo.png"
     },
     {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\accordian.gif",
@@ -485,6 +481,10 @@
       "PackagePath": "staticwebassets\\images\\taskbar\\black\\taskbuttons-panel-bg.gif"
     },
     {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\user_icon.jpg",
+      "PackagePath": "staticwebassets\\images\\user_icon.jpg"
+    },
+    {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\winbar-bg.gif",
       "PackagePath": "staticwebassets\\images\\winbar-bg.gif"
     },
@@ -515,10 +515,6 @@
     {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\Scripts\\RowEditor.js",
       "PackagePath": "staticwebassets\\js\\Scripts\\RowEditor.js"
-    },
-    {
-      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\Scripts\\access.js",
-      "PackagePath": "staticwebassets\\js\\Scripts\\access.js"
     },
     {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\Scripts\\applicationparts.js",
@@ -661,8 +657,52 @@
       "PackagePath": "staticwebassets\\js\\Scripts\\modernizr-2.8.3.js"
     },
     {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\global\\access.js",
+      "PackagePath": "staticwebassets\\js\\global\\access.js"
+    },
+    {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\global\\config.js",
       "PackagePath": "staticwebassets\\js\\global\\config.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\adm.js",
+      "PackagePath": "staticwebassets\\js\\modules\\adm.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\agent.js",
+      "PackagePath": "staticwebassets\\js\\modules\\agent.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\conso.js",
+      "PackagePath": "staticwebassets\\js\\modules\\conso.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\dash.js",
+      "PackagePath": "staticwebassets\\js\\modules\\dash.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\drv.js",
+      "PackagePath": "staticwebassets\\js\\modules\\drv.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\ext.js",
+      "PackagePath": "staticwebassets\\js\\modules\\ext.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\officeA.js",
+      "PackagePath": "staticwebassets\\js\\modules\\officeA.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\pwd_reset.js",
+      "PackagePath": "staticwebassets\\js\\modules\\pwd_reset.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\setup.js",
+      "PackagePath": "staticwebassets\\js\\modules\\setup.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\shipn.js",
+      "PackagePath": "staticwebassets\\js\\modules\\shipn.js"
     },
     {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\site.js",

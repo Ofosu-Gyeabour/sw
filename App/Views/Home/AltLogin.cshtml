@@ -1,57 +1,65 @@
 ﻿@{
-    ViewBag.Title = "Desktop";
+    //ViewBag.Title = "Desktop";
     Layout = "~/Views/Shared/_AlternateLogin.cshtml";
 }
-    
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<form id="login_form" class="form_class" method="post">
-    <div class="form_div">
-        <label>Login:</label>
-        <input class="field_class" name="login_txt" id="usr" type="text" placeholder="Enter username" autofocus>
-        <label>Password:</label>
-        <input id="pass" class="field_class" name="password_txt" type="password" placeholder="Enter password">
-        
-        <button class="submit_class" id="submitBtn" type="submit">
-            Login
-        </button>
-    </div>
-    <div class="info_div">
-        
-    </div>
-</form>
 
-   <script type="text/javascript">
-    
-    $(document).ready(function(){
-        $('#submitBtn').click(function(e){
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h2 class="active">SwiftShip</h2>
+        <div class="fadeIn first">
+            <!--<img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />-->
+            <img src="~/images/user_icon.jpg" id="icon" alt="User Icon" />
+        </div>
+
+        <form>
+            <input type="text" id="usr" class="fadeIn second" name="login" placeholder="enter username">
+            <input type="password" id="pwd" class="fadeIn third" name="login" placeholder="enter password">
+            <input type="submit" id="submitBtn" class="fadeIn fourth" value="Log In">
+        </form>
+
+        <p>Forgot password? Click <a href="#">here </a> to reset</p>
+        <div id="dvstat"></div>
+        <div id="formFooter"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#submitBtn').click(function (e) {
             e.preventDefault();
-            
+
+            $('div#dvstat').empty().append('<b style="font-size:15px;color:red;">Authenticating credentials: please wait...</b>').fadeIn('slow');//.fadeOut('slow');
+
             $.post("@Url.Action("Login","User")",
-                    { usrname: $('#usr').val(), pwd: $('#pass').val() })
-                    .done(function (msg) {
-                        if (msg.status.toString() == "true") {
-                            $('div.info_div').empty().append('<b style="font-size:15px;color:green;">Login success. Redirecting...</b>').fadeIn('slow').fadeOut('slow');
-                            //window.location = "Home/Main";
-                            window.location = "@Url.Action("UI","Home")";
+                { usrname: $('#usr').val(), pwd: $('#pwd').val() })
+                .done(function (msg) {
+                    if (msg.status.toString() == "true") {
+                        //alert(msg.data.toString());
+                        $('div#dvstat').empty().append('<b style="font-size:15px;color:green;">Login success. Redirecting...</b>').fadeIn('slow').fadeOut('slow');
+                        window.location = "@Url.Action("UI","Home")";
+                    }
+                    else if (msg.status.toString() == "false") {
+                        //alert(msg.data.toString());
+                        if (msg.reason.toString() == "pwd") {
+                            $('div#dvstat').empty().append('<b style="font-size:15px;color:red;">Incorrect login credentials.Please try again</b>').fadeIn('slow').fadeOut('slow');
                         }
-                        else if (msg.status.toString() == "false")
-                        {
-                            if (msg.reason.toString() == "pwd") {
-                                $('div.info_div').empty().append('<b style="font-size:15px;color:red;">Incorrect login credentials.Please try again</b>').fadeIn('slow').fadeOut('slow');
-                            }
 
-                            if (msg.reason.toString() == "inactive") {
-                                $('div.info_div').empty().append('<b style="font-size:12px;color:red;">User account is de-activated. Please contact ITD</b>').fadeIn('slow').fadeOut('slow');
-                            }
-
-                            if (msg.reason.toString() == "multiple_Logs") {
-                                $('div.info_div').empty().append('<b style="font-size:12px;color:red;">User has already logged on from a different location</b>').fadeIn('slow').fadeOut('slow');
-                            }
+                        if (msg.reason.toString() == "inactive") {
+                            //alert(msg.reason.toString());
+                            console.log(msg.reason.toString());
+                            $('div#dvstat').empty().append('<b style="font-size:12px;color:red;">User account is de-activated.Please contact Admin</b>').fadeIn('slow').fadeOut('slow');
                         }
-                        
+
+                        if (msg.reason.toString() == "multiple_Logs") {
+                            //alert(msg.reason.toString());
+                            console.log(msg.reason.toString());
+                            $('div#dvstat').empty().append('<b style="font-size:12px;color:red;">User has already logged on from a different location</b>').fadeIn('slow').fadeOut('slow');
+                        }
+                    }
                 })
-
         });
-    });
 
+    });
 </script>

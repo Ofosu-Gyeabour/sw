@@ -3,81 +3,75 @@
     ViewBag.Title = "Desktop";
     Layout = "~/Views/Shared/Desktop.cshtml";
 }
+
 <script src="~/js/Scripts/jquery-3.4.1.js"></script>
 <script src="~/js/Scripts/Desktop.js"></script>
 <script src="~/js/Scripts/App.js"></script>
 <script src="~/js/Scripts/Module.js"></script>
-<!--<script src="~/js/Scripts/access.js"></script>-->
 
+<script src="~/js/global/access.js"></script>
 
 <div id="x-desktop">
     <!----> <a href="https://panafricansl.com" target="_blank" style="margin:5px; float:right;">
-        <img src="~/images/PASL.jpg" style="height:60px;width:80px;" />
+        <img src="~/images/WIF_logo.png" style="height:60px;width:80px;" />
     </a>
 
             <dl id="x-shortcuts" class="dl">
 
-                <dt id="mast" class="master">
+                <dt id="adm" class="master adm">
                     <a id="dtCap">
                         <img src="~/images/grid48x48.png" />
-                        <div>Setup</div>
+                        <div>Admin</div>
                     </a>
                 </dt>
 
-                <dt id="branchReq" class="grid branchReq">
+                <dt id="officeA" class="grid officeA">
                     <a id="grd">
                         <img src="~/images/grid48x48.png" />
-                        <div>Requisition</div>
+                        <div>Office Area</div>
                     </a>
                 </dt>
 
-                <dt id="committee" class="grid committee">
+                <dt id="drv" class="grid drv">
                     <a id="acc">
                         <img src="~/images/grid48x48.png" />
-                        <div>Committees</div>
+                        <div>Driver</div>
                     </a>
                 </dt>
 
-                <dt id="management" class="grid management">
+                <dt id="conso" class="grid conso">
                     <a id="recoveries">
                         <img src="~/images/grid48x48.png" class="gridimg" />
-                        <div>Management</div>
+                        <div>Consolidator</div>
                     </a>
                 </dt>
 
-                <dt id="finControl" class="gen_modules finControl">
+                <dt id="shipn" class="gen_modules shipn">
                     <a id="cse_mgmt">
                         <img src="~/images/grid48x48.png" class="gridimg" />
-                        <div>Financial Approval</div>
+                        <div>Shipping</div>
                     </a>
                 </dt>
 
-                <dt id="capex" class="gen_modules capex">
+                <dt id="agent" class="gen_modules agent">
                     <a id="capex">
                         <img src="~/images/grid48x48.png" class="gridimg" />
-                        <div>CAPEX</div>
+                        <div>Agents and Agencies</div>
                     </a>
                 </dt>
 
 
-                <dt id="approval" class="gen_modules approval">
+                <dt id="dash" class="gen_modules dash">
                     <a id="approval">
                         <img src="~/images/grid48x48.png" class="gridimg" />
-                        <div>Procurement Approval</div>
+                        <div>Dashboards</div>
                     </a>
                 </dt>
 
-                <dt id="acc-win-reports" class="reports">
+                <dt id="setup" class="reports setup">
                     <a id="rept" href="#">
                         <img src="~/images/s.gif" />
-                        <div>Reports</div>
-                    </a>
-                </dt>
-
-                <dt id="itm_receivable" class="cred itm_receivable">
-                    <a id="sysAdmin" href="#">
-                        <img src="~/images/grid48x48.png" />
-                        <div>Product Receivables</div>
+                        <div>User Configuration</div>
                     </a>
                 </dt>
 
@@ -88,19 +82,14 @@
                     </a>
                 </dt>
 
-                <dt id="config" class="cred config">
-                    <a id="sysAdmin" href="#">
-                        <img src="~/images/app_credentials.png" />
-                        <div>User Configuration</div>
-                    </a>
-                </dt>
-
                 <dt id="acc-win-logout" class="ext">
-                    <a id="logoff">
-                        <img src="~/images/s.gif" style="background:no-repeat;" />
+                    <a id="logoff" href="#">
+                        <img src="~/images/exit.png" class="background:no-repeat" />
                         <div>Log off</div>
                     </a>
                 </dt>
+                
+
             </dl>
 
 </div>
@@ -115,6 +104,7 @@
 
 <script type="text/javascript">
 
+    
     $(document).ready(function () {
         //$('#x-shortcuts dt').hide();
         $('.dl dt').hide();
@@ -126,7 +116,16 @@
         
         $('#x-desktop').zoom = '90%';
 
-    });
+        setInterval(()=>{
+            var url = pfx + '/User/GetLoggedStatus';
+            $.getJSON(url,{},function(fs){
+                if (fs.status.toString() == "false"){
+                    window.location ="@Url.Action("AltLogin","Home")";
+                }
+            })
+        },5000);
 
+    });
+    
 
 </script>
