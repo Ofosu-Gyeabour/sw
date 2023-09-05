@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\wallpapers\" />
     <Folder Include="wwwroot\js\views\" />
   </ItemGroup>
 

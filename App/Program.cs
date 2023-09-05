@@ -12,12 +12,30 @@ builder.Services.AddControllersWithViews();
 #region repository
 
 var settings = builder.Configuration.GetSection("Settings").Get<Settings>();
+var eventsConfiguration = builder.Configuration.GetSection("Events").Get<Events>();
+
+ConfigObject.API_STUB = settings.apiStub;
 ConfigObject.DB_SCAFFOLD = settings.scaffoldDbContext;
+ConfigObject.DB_CONN = settings.dbConnectionString;
 ConfigObject.MD5_AUTH = settings.MD5AuthenticationEndPoint;
 ConfigObject.USERS_API = settings.getUsersEndPoint;
 ConfigObject.DEPARTMENT_API = settings.getDepartmentsEndPoint;
 ConfigObject.MD5_ENC = settings.GetMD5Encryption;
+ConfigObject.LOGIN_FLAG = settings.SetLoggedInFlag;
+ConfigObject.LOGOUT_FLAG = settings.SetLoggedOutFlag;
 ConfigObject.CONTENT_TYPE = settings.contentType;
+ConfigObject.WRITE_LOG = settings.WriteLog;
+
+ConfigObject.PROFILE_CREATE = settings.CreateProfile;
+ConfigObject.PROFILES_GET = settings.GetProfiles;
+
+ConfigObject.USER_PROFILE_GET = settings.GetUserProfile;
+ConfigObject.USER_PROFILE_MODULES = settings.GetProfileModules;
+ConfigObject.USER_PROFILE_AMEND = settings.AmendUserProfile;
+ConfigObject.USER_CREATE = settings.CreateUser;
+
+ConfigObject.AUTH_OPERATION = eventsConfiguration.auth;
+ConfigObject.EXIT_OPERATION = eventsConfiguration.exit;
 
 #endregion
 
@@ -37,7 +55,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
-
 
 
 app.UseHttpsRedirection();

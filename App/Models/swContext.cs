@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using App.utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -29,13 +30,14 @@ namespace App.Models
         public virtual DbSet<TUsrDetail> TUsrDetails { get; set; } = null!;
         public virtual DbSet<Tcompany> Tcompanies { get; set; } = null!;
         public virtual DbSet<Tusr> Tusrs { get; set; } = null!;
+        public virtual DbSet<TEvent> TEvents { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-9EO1DVH\\CONNECT;Database=sw;User Id=sa;Password=excalibur@33;Trusted_Connection=true;");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer(ConfigObject.DB_CONN);
             }
         }
 
@@ -457,10 +459,27 @@ namespace App.Models
                     .HasForeignKey(d => d.CompanyId)
                     .HasConstraintName("FK_tusr_tcompany");
 
+                entity.HasOne(d => d.Department)
+                    .WithMany(p => p.Tusrs)
+                    .HasForeignKey(d => d.DepartmentId)
+                    .HasConstraintName("FK_tusr_tDepartment");
+
                 entity.HasOne(d => d.Profile)
                     .WithMany(p => p.Tusrs)
                     .HasForeignKey(d => d.ProfileId)
                     .HasConstraintName("FK_tusr_tProfile");
+            });
+
+            modelBuilder.Entity<TEvent>(entity =>
+            {
+                entity.ToTable("tEvent");
+
+                entity.Property(e => e.Id).HasComment("primary key");
+
+                entity.Property(e => e.EventDescription)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("eventDescription");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -221,22 +221,6 @@
       "PackagePath": "staticwebassets\\images\\charts.swf"
     },
     {
-      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\desktop.jpg",
-      "PackagePath": "staticwebassets\\images\\desktop.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\desktop4.gif",
-      "PackagePath": "staticwebassets\\images\\desktop4.gif"
-    },
-    {
-      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\eco_headoffice_1.jpg",
-      "PackagePath": "staticwebassets\\images\\eco_headoffice_1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\eco_headoffice_2.jpg",
-      "PackagePath": "staticwebassets\\images\\eco_headoffice_2.jpg"
-    },
-    {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\exit.png",
       "PackagePath": "staticwebassets\\images\\exit.png"
     },
@@ -417,6 +401,10 @@
       "PackagePath": "staticwebassets\\images\\s.gif"
     },
     {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\shipyard.jpg",
+      "PackagePath": "staticwebassets\\images\\shipyard.jpg"
+    },
+    {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\standard.jpg",
       "PackagePath": "staticwebassets\\images\\standard.jpg"
     },
@@ -483,6 +471,74 @@
     {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\user_icon.jpg",
       "PackagePath": "staticwebassets\\images\\user_icon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\user_icon_brown.png",
+      "PackagePath": "staticwebassets\\images\\user_icon_brown.png"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\usr_account.jpg",
+      "PackagePath": "staticwebassets\\images\\usr_account.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\usr_account2.jpg",
+      "PackagePath": "staticwebassets\\images\\usr_account2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\blue.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\blue.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\container1.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\container1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\container2.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\container2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\desk.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\desk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\desktop.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\desktop.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\desktop2.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\desktop2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\desktop4.gif",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\desktop4.gif"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\ext.gif",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\ext.gif"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\img17.bmp",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\img17.bmp"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\img18.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\img18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\img19.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\img19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\shiny.gif",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\shiny.gif"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\shipping.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\shipping.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\wallpapers\\sky.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpapers\\sky.jpg"
     },
     {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\images\\winbar-bg.gif",
@@ -663,6 +719,10 @@
     {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\global\\config.js",
       "PackagePath": "staticwebassets\\js\\global\\config.js"
+    },
+    {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\global\\utils.js",
+      "PackagePath": "staticwebassets\\js\\global\\utils.js"
     },
     {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\modules\\adm.js",

@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.balloonClass {
+    border: 'solid 4px #5baec0';
+            padding: '10px';
+            fontSize: '150%';
+            fontWeight: 'bold';
+            lineHeight: '3';
+            backgroundColor: '#666';
+            color:'#fff';
+            showDuration: 1000;
+            hideDuration: 500;
+}

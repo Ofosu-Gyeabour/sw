@@ -23,5 +23,7 @@ namespace App.Models
         public string? Describ { get; set; }
 
         public virtual Tcompany? Company { get; set; }
+
+        public virtual ICollection<Tusr> Tusrs { get; set; }
     }
 }
