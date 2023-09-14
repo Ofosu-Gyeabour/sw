@@ -45,7 +45,7 @@ namespace App.Controllers
                     /*use the following until responseCache is sorted*/
                     var api_user_data = await utils.GetUserAsync(objUser);
 
-                    //api call..investigating responseCache
+                    //api call..check responseCache header
                     //var api_user_data = await api.AuthenticateUserAsync(objUser);
 
                     if (api_user_data.status)
