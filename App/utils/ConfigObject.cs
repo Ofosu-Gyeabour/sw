@@ -25,5 +25,7 @@
         public static string USER_PROFILE_MODULES { get; set; }
         public static string USER_PROFILE_AMEND { get; set; }
         public static string USER_CREATE { get; set; }
+
+        public static string PWD_CHANGE { get; set; }
     }
 }

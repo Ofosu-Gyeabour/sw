@@ -1,56 +1,5 @@
 Ext.onReady(function () {
-
-    /**/
-    var getActiveProfiles = function (Knt) {
-        var p = [];
-        $.getJSON('/Utility/getActiveModules', Knt, {}, function (r) {
-            if (r.status.toString() == "true") {
-                $.each(r.data, function (i, d) {
-                    p[i] = [d.Id, d.module, d.describ];
-                });
-                Knt.getStore().loadData(p);
-            }
-        });
-    }
-
-    var getGeneralProfiles = function (pf) {
-        var dta = [];
-        $.getJSON('/User/getProfiles', {}, function (a) {
-            if (a.status.toString() == "true") {
-                $.each(a.msg, function (i, dt) {
-                    dta[i] = [dt.Id, dt.nameOfProfile];
-                });
-                pf.getStore().loadData(dta);
-            }
-        });
-    }
-
-    var getUserList = function (k) {
-        var a = [];
-        var adStr = ''; var actStr = ''; var logStr = '';
-        $.getJSON('/User/getUserList', {}, function (rsp) {
-            k.getStore().removeAll();
-            if (rsp.status.toString() == "true") {
-                $.each(rsp.msg, function (i, d) {
-                    if (d.activeStatus.toString() == "0") { actStr = 'No'; } else { actStr = 'Yes'; }
-                    if (d.loggedStatus.toString() == "0") { logStr = 'No'; } else { logStr = 'Yes'; }
-                    if (d.isAD.toString() == "0") { adStr = 'No'; } else { adStr = 'Yes'; }
-
-                    a[i] = [d.Id, d.username, actStr, logStr, adStr, d.uProfile];
-                });
-
-                console.log(a);
-                k.getStore().loadData(a);
-                //k.getView().refresh();
-                //if (k.getStore().getCount() > 0) {
-                //    k.getView().refresh();
-                //}
-                //else { k.getStore().loadData(a); }
-            }
-        });
-    }
-
-
+    
     var ubt = Ext.get('setup');
 
 
@@ -58,7 +7,7 @@ Ext.onReady(function () {
         var xWindow = Ext.getCmp('usrmgmtWindow');
         if (!xWindow) {
 
-            xw = new Ext.Window({
+            xWindow = new Ext.Window({
                 id: 'usrmgmtWindow',
                 title: 'USER MANAGEMENT',
                 height: 700,
@@ -130,6 +79,46 @@ Ext.onReady(function () {
                                                         $('#uprf').val('');
                                                         $('#xsname').focus();
                                                     }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        id: 'frm_pwd_reset', title: 'Reset Password', defaults: { xtype: 'textfield', anchor: '100%' }, layout: 'form',
+                                        items: [
+                                            { id: 'frm_p_user', fieldLabel: 'User name' },
+                                            { id:'frm_p_pwd',inputType:'password', fieldLabel:'Password'}
+                                        ],
+                                        buttons: [
+                                            {
+                                                id: 'btn_usr_change',
+                                                text:'Change Password',
+                                                handler: function (btn) {
+                                                    var _form = Ext.getCmp('frm_pwd_reset').getForm();
+                                                    if (_form.isValid()) {
+                                                        $.post('/User/changePassword',
+                                                            { usrname: Ext.fly('frm_p_user').getValue(), pwd: Ext.fly('frm_p_pwd').getValue(),flag:'*' },
+                                                            function (fs) {
+                                                                if (fs.status.toString() == "true") {
+                                                                    var gmsg = {
+                                                                        title: 'PASSWORD CHANGE',
+                                                                        msg: fs.msg,
+                                                                        icon: Ext.MessageBox.INFO,
+                                                                        buttons: Ext.Msg.OK
+                                                                    };
+
+                                                                    Ext.Msg.show(gmsg);
+                                                                }
+                                                        });
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                id: 'btn_usr_clr',
+                                                text:'Clear',
+                                                handler: function (btn) {
+                                                    Ext.getCmp('frm_pwd_reset').getForm();
+                                                    $('#frm_p_user').focus();
                                                 }
                                             }
                                         ]

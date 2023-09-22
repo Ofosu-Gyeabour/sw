@@ -23,6 +23,10 @@
         public string AmendUserProfile { get; set; } = string.Empty;
         public string GetDepartments { get; set; } = string.Empty;
         public string CreateUser { get; set; } = string.Empty;
+
+
+        //newly-added
+        public string changePassword { get; set; } = string.Empty;
     }
 
     public class Events

@@ -43,10 +43,10 @@ namespace App.Controllers
                     //var user_record = await Cfg.getUserRecordAsync(objUser.username);
 
                     /*use the following until responseCache is sorted*/
-                    var api_user_data = await utils.GetUserAsync(objUser);
+                    //var api_user_data = await utils.GetUserAsync(objUser);
 
                     //api call..check responseCache header
-                    //var api_user_data = await api.AuthenticateUserAsync(objUser);
+                    var api_user_data = await api.AuthenticateUserAsync(objUser);
 
                     if (api_user_data.status)
                     {
@@ -315,5 +315,35 @@ namespace App.Controllers
             }
         }
     
+        public async Task<JsonResult> changePassword(string usrname, string pwd,string flag)
+        {
+            //updates the password of the current user
+            try
+            {
+                SingleValue param = new SingleValue() { stringValue = pwd };
+
+                App.POCOs.User user = new POCOs.User()
+                {
+                    username = usrname,
+                    password = utils.HashPassword(param)
+                };
+
+                var operationStatus = await api.GenericAPICallerAsync($"{ConfigObject.API_STUB}{ConfigObject.PWD_CHANGE}", user,ConfigObject.CONTENT_TYPE,@"put");
+                if ((operationStatus.status) && (flag == @"self"))
+                {
+                    //update session object
+                    var session = HttpContext.Session.GetObject<UserAPIResponse>("userSession");
+                    session.user.usrpassword = user.password;
+
+                    HttpContext.Session.Clear();
+                    HttpContext.Session.setObject("userSession", session);
+                }
+                return Json(new { status = operationStatus.status, msg = operationStatus.message});
+            }
+            catch(Exception x)
+            {
+                return Json(new { status = false,error = $"error: {x.Message}" });
+            }
+        }
     }
 }

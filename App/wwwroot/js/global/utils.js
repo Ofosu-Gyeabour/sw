@@ -82,6 +82,7 @@ utils.getModulesForProfile = function (urlString,_profile, _widget) {
         }
     });
 }
+
 utils.returnGreeting = function () {
     console.log("hello there");
 }

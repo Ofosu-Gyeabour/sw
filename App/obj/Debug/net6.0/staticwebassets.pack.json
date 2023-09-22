@@ -629,6 +629,10 @@
       "PackagePath": "staticwebassets\\js\\Scripts\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\Scripts\\file-upload.js",
+      "PackagePath": "staticwebassets\\js\\Scripts\\file-upload.js"
+    },
+    {
       "Id": "C:\\Users\\Blessings\\Documents\\WIF_Projects\\appTemplate\\App\\wwwroot\\js\\Scripts\\jquery-1.8.3.min.js",
       "PackagePath": "staticwebassets\\js\\Scripts\\jquery-1.8.3.min.js"
     },

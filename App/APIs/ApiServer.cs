@@ -20,6 +20,44 @@ namespace App.APIs
     {
         public ApiServer() { }
 
+        public async Task<UserAPIResponse> GenericAPICallerAsync(string apiRoute,object objPayLoad, string contentType, string verb)
+        {
+            UserAPIResponse apiResponse = null;
+            HttpResponseMessage response = new HttpResponseMessage();
+            StringContent content = new StringContent(string.Empty);
+
+            try
+            {
+                HttpClient client = BuildHTTPClient(apiRoute, contentType);
+
+                if (verb != @"get")
+                    content = new StringContent(JsonConvert.SerializeObject(objPayLoad), Encoding.UTF8, contentType);
+                
+                if (verb == @"put")
+                    response = await client.PutAsync(client.BaseAddress, content);
+
+                if (verb == @"post")
+                    response = await client.PostAsync(client.BaseAddress, content);
+                
+                response.EnsureSuccessStatusCode();
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseBody = await response.Content.ReadAsStringAsync();
+                    apiResponse = JsonConvert.DeserializeObject<UserAPIResponse>(responseBody);
+                }
+                else { apiResponse = new UserAPIResponse() { status = false }; }
+
+                return apiResponse;
+            }
+            catch(Exception ex)
+            {
+                return apiResponse = new UserAPIResponse() { 
+                    status = false,
+                    message = $"{ex.Message}"
+                };
+            }
+        }
+
         public async Task<UserAPIResponse> AuthenticateUserAsync(App.POCOs.User payLoad)
         {
             //method consumes an endpoint that authenticates user using the MD5 encryption algorithm

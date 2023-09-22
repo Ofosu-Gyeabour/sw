@@ -36,6 +36,21 @@ namespace App.Controllers
             }
         }
 
+        public JsonResult GetCurrentUser()
+        {
+            //method fetches the current user from the session object
+            try
+            {
+                var session = HttpContext.Session.GetObject<UserAPIResponse>("userSession");
+               
+                return Json(new { status = true, dta = session.user });
+            }
+            catch(Exception x)
+            {
+                return Json(new { status = false, error = $"error: {x.Message}" });
+            }
+        }
+
         public async Task<JsonResult> getActiveModules()
         {
             //method gets all active modules

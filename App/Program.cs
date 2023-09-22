@@ -37,6 +37,8 @@ ConfigObject.USER_CREATE = settings.CreateUser;
 ConfigObject.AUTH_OPERATION = eventsConfiguration.auth;
 ConfigObject.EXIT_OPERATION = eventsConfiguration.exit;
 
+ConfigObject.PWD_CHANGE = settings.changePassword;
+
 #endregion
 
 builder.Services.AddSession(options =>
